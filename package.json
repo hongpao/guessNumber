@@ -1,0 +1,19 @@
+{
+  "name": "guess",
+  "version": "1.0.0",
+  "description": "猜数字游戏",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongpao/guessNumber.git"
+  },
+  "author": "hongpao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hongpao/guessNumber/issues"
+  },
+  "homepage": "https://github.com/hongpao/guessNumber#readme"
+}
