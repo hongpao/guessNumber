@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/guessNumber.css">
     <title>猜数字</title>
 </head>
 <body>
@@ -14,34 +15,8 @@
 <input type="text" name="num" id="J-num" class="num" value="">
 <input type="button" name="guess" id="J-guessBtn" class="guess" value="guess">
 <p class="range">0 - 100</p>
-<script>
-    var guessNumber = null;
-    var startNumber = 0;
-    var endNumber = 100;
-    var btn = document.getElementById("J-btn");
-    var guessBtn = document.getElementById("J-guessBtn");
-    var num = document.getElementById("J-num");
-    btn.addEventListener('click', function () {
-        guessNumber = parseInt(Math.random() * 100);
-        btn.style.display = "none";
-        document.getElementsByClassName("showNumber")[0].innerText = guessNumber;
-    });
-    guessBtn.addEventListener('click', function () {
-        var guessNum = num.value;
-        if (guessNum == guessNumber) {
-            alert("you win");
-        } else if (guessNum < guessNumber && guessNum > startNumber) {
-            startNumber = guessNum;
-        } else if (guessNum > guessNumber && guessNum < endNumber) {
-            endNumber = guessNum;
-        } else {
-            alert("not range");
-            num.value = "";
-            return;
-        }
-        document.getElementsByClassName("range")[0].innerText = startNumber + " - " + endNumber;
-        num.value = "";
-    });
-</script>
+<ul class="list"></ul>
+
+<script src="../scripts/guessNumber.js"></script>
 </body>
 </html>
