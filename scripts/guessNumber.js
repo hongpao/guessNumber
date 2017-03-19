@@ -5,6 +5,8 @@
     var btn = document.getElementById("J-btn");
     var guessBtn = document.getElementById("J-guessBtn");
     var num = document.getElementById("J-num");
+    var list = document.getElementsByClassName("list")[0];
+
     btn.addEventListener('click', function () {
         guessNumber = parseInt(Math.random() * 100);
         btn.style.display = "none";
@@ -23,14 +25,15 @@
             num.value = "";
             return;
         }
+
         document.getElementsByClassName("range")[0].innerText = startNumber + " - " + endNumber;
         num.value = "";
-    });
 
-    var list = document.getElementsByClassName("list")[0];
-    for (var i = 1; i < 100; i++) {
-        var li = document.createElement("li");
-        li.innerText = i;
-        list.appendChild(li);
-    }
+        list.innerText = "";
+        for (var i = startNumber + 1; i < endNumber; i++) {
+            var li = document.createElement("li");
+            li.innerText = i;
+            list.appendChild(li);
+        }
+    });
 })();
